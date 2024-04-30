@@ -52,6 +52,11 @@
   /* grid-gap: 8px; */
 }
 
+.app-wrapper-content {
+  grid-area: c;
+  background-color: burlywood;
+}
+
 
 
  
