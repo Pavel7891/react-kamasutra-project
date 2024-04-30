@@ -4,7 +4,7 @@ import cl from './Post.module.css';
 
 const Post =(props)=> { 
 
-      debugger;
+      //debugger;
       //console.log(props.message);
       return(
 <div className={cl.item}>

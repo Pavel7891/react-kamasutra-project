@@ -7,6 +7,8 @@
   color: rgb(255, 255, 255);
 }
 
+.item a {color: rgb(255, 255, 255)};
+
 .item.active {
   color: gold;
 }

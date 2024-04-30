@@ -11,10 +11,10 @@ console.log(classes);
 const Navbar =()=> {
     return (<nav className={classes.nav}>
     <div className ={classes.item}>
-      <a>Profile</a>
+      <a href="/profile">Profile</a>
       </div>
     <div className ={`${classes.item} ${classes.active}`}>
-      <a>Messages</a> 
+      <a href="/dialogues">Messages</a> 
       </div>
     <div className ={classes.item}>
       <a>News</a>
@@ -43,4 +43,14 @@ export default Navbar;
  как свойство объекта classes, для этого "склеим"
  .item и .active через конкотинацию строк, таким образом:
  {`${classes.item} ${classes.active}`}
+*/
+
+/* <a href="/dialogues">Messages</a>
+Таким образом прописываем ссылку на 
+компоненту, через содержащую компоненту 
+папку. Теперь, благодаря пути, прописанному
+с помощью BrouserRoter, Rotes, Rote 
+( см. App.js), по клику на ссылку открывается 
+соответствующий компонент в виде страцицы в
+браузере.
 */
