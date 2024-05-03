@@ -1,5 +1,6 @@
 import React from "react";
 import classes from './Navbar.module.css';
+import { NavLink } from "react-router-dom";
 console.log(classes);
 
 // let a = 'item';
@@ -10,20 +11,25 @@ console.log(classes);
 
 const Navbar =()=> {
     return (<nav className={classes.nav}>
-    <div className ={classes.item}>
-      <a href="/profile">Profile</a>
-      </div>
-    <div className ={`${classes.item} ${classes.active}`}>
-      <a href="/dialogues">Messages</a> 
+    <div className = {classes.item}>
+       {/* <a href="/profile">Profile</a>  */}
+      <NavLink to="/profile" className ={changeColor => changeColor.isActive ? classes.item : classes.active} >Profile</NavLink>
       </div>
     <div className ={classes.item}>
-      <a>News</a>
+       {/* <a href="/dialogues">Messages</a>  */}
+      <NavLink to="/dialogues">Messages</NavLink> 
       </div>
     <div className ={classes.item}>
-      <a>Music</a>
+      {/* <a>News</a> */}
+      {/* <NavLink to "">News</NavLink> */}
+      </div>
+    <div className ={classes.item}>
+      {/* <a>Music</a> */}
+      {/* <NavLink to "">Music</NavLink> */}
       </div>
       <div className ={classes.item}>
-        <a>Settings</a>
+        {/* <a>Settings</a> */}
+        {/* <NavLink to "">Settings</NavLink> */}
       </div>
   </nav>)
 }
@@ -53,4 +59,24 @@ export default Navbar;
 ( см. App.js), по клику на ссылку открывается 
 соответствующий компонент в виде страцицы в
 браузере.
+*/
+
+//// 20 //////
+
+/* Использование в качестве ссылки NavLink to = ""
+вместо  a href = "" позволяет переходить на другую 
+страницу без перерисовки всего приложения. Это можно
+увидеть, если открыть в панели разработчика раздел
+network. Здесь видно, что при работе NavLink to =""
+новых данных, которые появляются в разделе network
+при перезагрузке приложения ( как это бывает при работе
+a href = ""), в данном случае, при переключении страниц,
+не происходит. Это экономит время и ресурс приложения.
+*/
+
+/* 
+Внутри тега NavLink to = "" прописываем такую конструкцию:
+className ={changeColor => changeColor.isActive ? classes.item : classes.active}
+Это должно менять свойства тега при изменении булевого значения, например, при
+нажатии на ссылку, кнопку. Однако этого не происходит, почему ?
 */
